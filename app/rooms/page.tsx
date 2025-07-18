@@ -12,6 +12,7 @@ import { AIChat } from "@/components/ai-chat"
 import { VoiceInterface } from "@/components/voice-interface"
 import { Room } from "@/types/room"
 import { getAllRooms } from "../api/rooms/roomsApi"
+import Image from "next/image"
 
 
 
@@ -79,7 +80,7 @@ export default function RoomsPage() {
           {rooms.map((room) => (
             <Card key={room.id} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative">
-                <img src={room.image_name || "/placeholder.svg"} alt={room.name} className="w-full h-48 object-cover" />
+                <Image src={room.image_name || "/placeholder.svg"} alt={room.name} className="w-full h-48 object-cover" />
                 <Badge className="absolute top-2 right-2 bg-blue-600">
                   <Star className="w-3 h-3 mr-1" />
                   {room.rating}

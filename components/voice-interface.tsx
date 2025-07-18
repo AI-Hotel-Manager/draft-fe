@@ -40,7 +40,7 @@ export function VoiceInterface({ onClose }: VoiceInterfaceProps) {
       recognitionRef.current.interimResults = false
       recognitionRef.current.lang = "en-US"
 
-      recognitionRef.current.onresult = (event) => {
+      recognitionRef.current.onresult = (event: any) => {
         const transcript = event.results[0][0].transcript
         setTranscript(transcript)
         handleVoiceInput(transcript)
@@ -50,7 +50,7 @@ export function VoiceInterface({ onClose }: VoiceInterfaceProps) {
         setIsListening(false)
       }
 
-      recognitionRef.current.onerror = (event) => {
+      recognitionRef.current.onerror = (event: any) => {
         console.error("Speech recognition error:", event.error)
         setIsListening(false)
       }
@@ -201,7 +201,7 @@ export function VoiceInterface({ onClose }: VoiceInterfaceProps) {
                 <CardTitle className="text-sm">You said:</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-gray-700">"{transcript}"</p>
+                <p className="text-sm text-gray-700">&quot;{transcript}&quot;</p>
               </CardContent>
             </Card>
           )}
@@ -247,9 +247,9 @@ export function VoiceInterface({ onClose }: VoiceInterfaceProps) {
           {/* Instructions */}
           <div className="text-xs text-gray-500 text-center space-y-1">
             <p>Try saying:</p>
-            <p>"Show me available rooms for tonight"</p>
-            <p>"I need a room for 2 guests"</p>
-            <p>"What's the price for the deluxe suite?"</p>
+            <p>&quot;Show me available rooms for tonight&quot;</p>
+            <p>&quot;I need a room for 2 guests&quot;</p>
+            <p>&quot;What&apos;s the price for the deluxe suite?&quot;</p>
           </div>
         </div>
       </DialogContent>

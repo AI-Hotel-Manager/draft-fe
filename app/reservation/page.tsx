@@ -13,6 +13,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { AIChat } from "@/components/ai-chat"
 import { VoiceInterface } from "@/components/voice-interface"
+import Image from "next/image"
 
 const rooms = [
   {
@@ -254,7 +255,7 @@ export default function ReservationPage() {
                     >
                       <CardContent className="p-4">
                         <div className="flex space-x-4">
-                          <img
+                          <Image
                             src={room.image || "/placeholder.svg"}
                             alt={room.name}
                             className="w-24 h-20 object-cover rounded"

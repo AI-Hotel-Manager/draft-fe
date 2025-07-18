@@ -65,7 +65,7 @@ export default function HomePage() {
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Experience seamless hotel booking with our AI-powered platform. Reserve rooms using voice commands or chat -
-            it's that simple!
+            it&apos;s that simple!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={() => setShowVoice(true)}>
